@@ -9,6 +9,7 @@ import {
     MovieListGrid,
   } from "../style";
   import { Link } from "react-router-dom";
+  import Banner from "../../src/banner";
 
 export const MovieList = () => {
     const { movieData } = useMovie()
@@ -17,6 +18,7 @@ export const MovieList = () => {
     return (
         
         <MovieListSection>
+          <Banner></Banner>
           <MovieHeading>Filmes Populares</MovieHeading>
           <MovieListGrid>
             {movieData.map((movie) => (
