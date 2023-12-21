@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Nav = styled.nav`
   height: 10vh;
@@ -91,18 +91,6 @@ export const MoviePoster = styled.img`
   height: 30rem;
 `;
 
-const tablet = (...args) => css`
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    ${css(...args)};
-  }
-`;
-
-const mobile = (...args) => css`
-  @media only screen and (max-width: 768px) {
-    ${css(...args)};
-  }
-`;
-
 export const MovieListGrid = styled.ul`
   display: grid;
   grid-template-columns: auto auto auto;
@@ -110,12 +98,4 @@ export const MovieListGrid = styled.ul`
   gap: 2rem;
   text-align: center;
   list-style-type: none;
-
-  ${tablet`
-    grid-template-columns: auto auto;
-  `}
-
-  ${mobile`
-    grid-template-columns: auto;
-  `}
 `;

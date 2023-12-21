@@ -24,7 +24,7 @@ export const MovieList = () => {
                 <Link to={`/movie/${movie.id}`} state={{ movie }}>
                   <MoviePoster src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>
                   <MovieTitle>{movie.title}</MovieTitle>
-                  <p>Data de Lançamento: {movie.release_date}</p>
+                  <p>Data de Lançamento: {movie.release_date.replace(/-/g, "/")}</p>
                   <p>Nota: {movie.vote_average.toFixed(2)}</p>
                   </Link>
               </MovieListItem>

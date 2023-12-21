@@ -38,10 +38,10 @@ function Details() {
                     <span>Sinopse:</span> {movie?.overview}
                   </MovieDetailsDescription>
                   <p className="movie-title-date">
-                    <span>Data de lançamento:</span> {movie?.release_date}
+                    <span>Data de lançamento:</span> {movie?.release_date.replace(/-/g, "/")}
                   </p>
                   <p className="movie-title-rating">
-                    <span>Nota:</span> {movie?.vote_average}
+                    <span>Nota:</span> {movie?.vote_average.toFixed(2)}
                   </p>
                   <Link to="/">
                     <MovieDetailsButton>Voltar para Home</MovieDetailsButton>
