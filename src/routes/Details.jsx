@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useMovie } from '../hooks/useMovie';
 import { Link } from "react-router-dom";
 
-// import { MovieImage, Paragraph } from './Movielist'
 import {
     MovieDetailsContainer,
     LeftColumn,
@@ -11,7 +10,14 @@ import {
     MovieDetailsDescription,
     MovieDetailsButton,
   } from "../style";
-// import styled from 'styled-components';
+
+  import Header from '../componentes/Header';
+  import Footer from '../componentes/Footer';
+
+
+ 
+
+
 
 
 
@@ -22,7 +28,7 @@ function Details() {
 
         return (
             <div>
-              <h1 title={movie?.title} />
+              <Header title={movie?.title} />
               <MovieDetailsContainer>
                 <LeftColumn>
                   <img
@@ -38,17 +44,17 @@ function Details() {
                     <span>Sinopse:</span> {movie?.overview}
                   </MovieDetailsDescription>
                   <p className="movie-title-date">
-                    <span>Data de lançamento:</span> {movie?.release_date.replace(/-/g, "/")}
+                    <span><b>Data de lançamento:</b></span> {movie?.release_date.replace(/-/g, "/")}
                   </p>
                   <p className="movie-title-rating">
-                    <span>Nota:</span> {movie?.vote_average.toFixed(2)}
+                    <span><b>Nota:</b></span> {movie?.vote_average.toFixed(2)}
                   </p>
                   <Link to="/">
                     <MovieDetailsButton>Voltar para Home</MovieDetailsButton>
                   </Link>
                 </RightColumnContainer>
               </MovieDetailsContainer>
-              <footer />
+              <Footer />
             </div>
           );
     

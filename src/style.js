@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Nav = styled.nav`
   height: 10vh;
@@ -12,7 +12,7 @@ export const Nav = styled.nav`
 `;
 
 export const MovieListSection = styled.div`
-  margin: 2rem 0;
+  margin:0;
 `;
 
 export const MovieHeading = styled.h2`
@@ -30,6 +30,8 @@ export const MovieListItem = styled.li`
 export const MovieTitle = styled.h3`
   width: 15rem;
   margin: auto;
+  text-decoration: none;
+  color: black;
 `;
 
 export const FooterContainer = styled.footer`
@@ -44,6 +46,7 @@ export const FooterContainer = styled.footer`
 `;
 
 export const MovieDetailsContainer = styled.div`
+  background-color: white;
   display: flex;
   height: 80vh;
   width: 100%;
@@ -91,11 +94,32 @@ export const MoviePoster = styled.img`
   height: 30rem;
 `;
 
+const tablet = (...args) => css`
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    ${css(...args)};
+  }
+`;
+
+const mobile = (...args) => css`
+  @media only screen and (max-width: 768px) {
+    ${css(...args)};
+  }
+`;
+
 export const MovieListGrid = styled.ul`
+  padding: 0;
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: center;
   gap: 2rem;
   text-align: center;
   list-style-type: none;
+
+  ${tablet`
+    grid-template-columns: auto auto;
+  `}
+
+  ${mobile`
+    grid-template-columns: auto;
+  `}
 `;
